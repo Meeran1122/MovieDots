@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieDots</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">MovieDots</a>
+            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-film me-1"></i>Content
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Movies</a></li>
+                            <li><a class="dropdown-item" href="#">TV Shows</a></li>
+                            <li><a class="dropdown-item" href="#">K-Dramas</a></li>
+                            <li><a class="dropdown-item" href="#">Songs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-star me-1"></i>Premium</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-info-circle me-1"></i>About</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-primary me-2 px-4 rounded-pill" data-bs-toggle="modal"
+                        data-bs-target="#loginModal">Login</button>
+                    <button class="btn btn-outline-light px-4 rounded-pill" data-bs-toggle="modal"
+                        data-bs-target="#signupModal">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Welcome Back!</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-4">
+                            <label for="loginEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email"
+                                required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword"
+                                placeholder="Enter your password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-2">Log In</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <a href="#!" class="text-decoration-none text-warning">Forgot password?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Create Account</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="signupUsername" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="signupUsername" placeholder="Choose a username"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="signupEmail" placeholder="Enter your email"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="signupPassword"
+                                placeholder="Create a password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-2">Create Account</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <span class="text-muted">Already have an account?</span>
+                        <a href="#!" class="text-warning text-decoration-none" data-bs-toggle="modal"
+                            data-bs-target="#loginModal">Log In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carousel -->
+    <div id="movieCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active"
+                style="background-image: url('https://betches.s3.amazonaws.com/app/uploads/2024/12/10121558/SQUID-GAME-SEASON-1-FINALE.jpg');">
+                <div class="carousel-caption">
+                    <h1>Money Heist</h1>
+                    <p class="release-date">Release Date: 2018</p>
+                    <p>"Crime is temporary, but the legacy is forever."</p>
+                    <button class="btn btn-lg">Watch Now</button>
+                </div>
+            </div>
+            <div class="carousel-item"
+                style="background-image: url('https://as2.ftcdn.net/v2/jpg/07/28/30/51/1000_F_728305106_4XHbepkbfbt2AJnGvvrZL4SZlqNnvLLV.jpg');">
+                <div class="carousel-caption">
+                    <h1>Mufasa</h1>
+                    <p class="release-date">Release Date: 2025</p>
+                    <p>"Brave leader, wise protector, and the true king."</p>
+                    <button class="btn btn-lg">Watch Now</button>
+                </div>
+            </div>
+            <div class="carousel-item"
+                style="background-image: url('https://as1.ftcdn.net/v2/jpg/07/37/89/58/1000_F_737895807_WPUW0EGh4YqJA4p1QAo3MpBPjKkaakPy.jpg');">
+                <div class="carousel-caption">
+                    <h1>The Final Hour</h1>
+                    <p class="release-date">Release Date: 2023</p>
+                    <p>A race against time to save the world from ultimate destruction.</p>
+                    <button class="btn btn-lg">Watch Now</button>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#movieCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#movieCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Categories Section -->
+    <div class="container my-5">
+        <h1 class="text-center mb-4 categories-title">Categories</h1>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="custom-card">
+                    <h3 class="card-title">Movies</h3>
+                    <img src="https://s.studiobinder.com/wp-content/uploads/2020/09/What-are-the-Major-Film-Studios-Hollywoods-Big-Five-Featured-1568x882.jpg"
+                        alt="Movies" class="card-image">
+                    <p class="card-description">Explore the latest and greatest movies, handpicked just for you!</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="custom-card">
+                    <h3 class="card-title">TV Shows</h3>
+                    <img src="https://data-corporate.abs-cbn.com/corp/medialibrary/dotcom/2023%20h2%20tonch%20gab/1017%20abs-cbn%20shows%20no.1/newsroom%20thumbnail%20(7).png?ext=.png"
+                        alt="TV Shows" class="card-image">
+                    <p class="card-description">Find binge-worthy TV shows that will keep you entertained for hours.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="custom-card">
+                    <h3 class="card-title">K-Dramas</h3>
+                    <img src="https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQS-OgCKSX2SX3cGx7GW7E2mSi3gWTRge03-PrerrME3Kce9aFk-jb8a-1ohY6LBV11-aK_Cn8x8bIxJmW0JuCKuOVlH7lAGp3TCnr2oZrGncyMAlPzLiXPZd1SWKSjgAllcxsVaMb0oGmXc0zPxD.jpg?r=65c"
+                        alt="K-Dramas" class="card-image">
+                    <p class="card-description">Discover the magic of Korean dramas with captivating stories and
+                        characters.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="custom-card">
+                    <h3 class="card-title">Songs</h3>
+                    <img src="https://officialgaetano.com/wp-content/uploads/2024/06/how-to-become-a-music-producer-compressed.png"
+                        alt="Songs" class="card-image">
+                    <p class="card-description">Dive into an ocean of songs, from trending hits to timeless classics.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="container about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Our Mission</h2>
+                <p>At MovieDots, we aim to create a seamless and enjoyable experience for movie enthusiasts. Our mission
+                    is to provide insightful movie notes, recommendations, and a community-driven space for passionate
+                    cinema lovers.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://cdn.pixabay.com/photo/2019/08/21/13/30/camera-4421040_1280.jpg" alt="Our Mission">
+            </div>
+        </div>
+        <div class="about-content reverse">
+            <div class="about-text">
+                <h2>Our Story</h2>
+                <p>MovieDots started with a simple idea: to make movie exploration easier. What began as a small project
+                    has now grown into a vibrant platform where users can discover, discuss, and dive deeper into the
+                    world of cinema.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://img.freepik.com/free-photo/happy-motivated-colleagues-office_114579-2790.jpg?t=st=1739213935~exp=1739217535~hmac=075fe11d62b52991ed301320c1fcc64147409dc3088fde56ddc0e3e8d9c0b3da&w=740"
+                    alt="Our Story">
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Us Section -->
+    <section class="contact-us">
+        <div class="contact-content">
+            <div class="contact-text reveal-slide-left">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-subtitle">Have a question or feature request? We're all ears!</p>
+                <div class="contact-info">
+                    <div class="info-item reveal-pop">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="info-content">
+                            <h4>Visit Us</h4>
+                            <p>123 Cinema Street<br>Movieville, MV 45678</p>
+                        </div>
+                    </div>
+                    <div class="info-item reveal-pop" style="transition-delay: 0.2s">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="info-content">
+                            <h4>Call Us</h4>
+                            <p>+1 (555) 123-4567<br>Mon-Fri, 9am - 8pm EST</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form reveal-slide-right">
+                <div class="form-group dual-input">
+                    <div class="input-wrapper">
+                        <input type="text" id="name" required>
+                        <label for="name">Your Name</label>
+                        <div class="input-border"></div>
+                        <div class="input-shine"></div>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="email" id="email" required>
+                        <label for="email">Email Address</label>
+                        <div class="input-border"></div>
+                        <div class="input-shine"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="text" id="subject" required>
+                        <label for="subject">Subject</label>
+                        <div class="input-border"></div>
+                        <div class="input-shine"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper textarea-wrapper">
+                        <textarea id="message" rows="5" required></textarea>
+                        <label for="message">Your Message</label>
+                        <div class="input-border"></div>
+                        <div class="input-shine"></div>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span>Send Message</span>
+                    <i class="fas fa-paper-plane"></i>
+                    <div class="btn-shine"></div>
+                </button>
+            </form>
+        </div>
+        <div class="contact-particles"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="content">
+            <div class="top">
+                <div class="logo-details">
+                    <i class="fa-solid fa-camera-movie"></i>
+                    <span class="logo_name">MovieDots</span>
+                </div>
+                <div class="media-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="link-boxes">
+                <ul class="box">
+                    <li class="link_name">Company</li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Get started</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Services</li>
+                    <li><a href="#">App design</a></li>
+                    <li><a href="#">Web design</a></li>
+                    <li><a href="#">Logo design</a></li>
+                    <li><a href="#">Banner design</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Account</li>
+                    <li><a href="#">Profile@gamil.com</a></li>
+                    <li><a href="#">Account@gamil.com</a></li>
+                    <li><a href="#">Prefrences@gamil.com</a></li>
+                    <li><a href="#">Purchase@gamil.com</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Courses</li>
+                    <li><a href="#">HTML & CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">Photography</a></li>
+                    <li><a href="#">Photoshop</a></li>
+                </ul>
+                <ul class="box input-box">
+                    <li class="link_name">Subscribe</li>
+                    <li><input type="text" placeholder="Enter your email"></li>
+                    <li><input type="button" value="Subscribe"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-details">
+            <div class="bottom_text">
+                <span class="copyright_text">Copyright &#169; 2021 <a href="#">MovieDots.</a>All rights reserved</span>
+                <span class="policy_terms">
+                    <a href="#">Privacy policy</a>
+                    <a href="#">Terms & condition</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js" ></script>
+</body>
+
+</html>
